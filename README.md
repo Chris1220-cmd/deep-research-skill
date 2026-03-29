@@ -44,7 +44,7 @@ Deep research tools like Perplexity Pro, Gemini Deep Research, and ChatGPT Deep 
 # Copy to your skills directory
 mkdir -p ~/.claude/skills/deep-research
 curl -o ~/.claude/skills/deep-research/SKILL.md \
-  https://raw.githubusercontent.com/Chris1220-cmd/deep-research-skill/raw/master/SKILL.md
+  https://raw.githubusercontent.com/Chris1220-cmd/deep-research-skill/master/SKILL.md
 ```
 
 ### Other Agents (Cursor, Copilot, Codex)
@@ -84,6 +84,99 @@ Without NotebookLM, the skill falls back to WebSearch-only mode (still works, bu
 ```
 /deep-research --continue
 ```
+
+## Demo
+
+### What you type:
+```
+/deep-research --domain academic "transformer architecture improvements 2025-2026"
+```
+
+### What happens:
+```
+Research Topic: "transformer architecture improvements 2025-2026"
+
+Depth:    3 (Standard — deep mode, 20+ sources, ~3 min)
+Focus:    A (Everything)
+Domain:   academic
+
+[1/6] Checking existing notebooks...
+[2/6] Creating research notebook...
+[3/6] Running deep research... (mode: deep)
+[4/6] Waiting for sources... (23 found, processing...)
+[5/6] Running academic searches... (+4 sources)
+[6/6] Synthesizing findings...
+
+Done — 27 sources analyzed. Report below.
+```
+
+### What you get:
+
+```markdown
+# Transformer Architecture Improvements 2025-2026 — Deep Research Report
+
+**Generated:** 2026-03-29 | **Sources:** 27 | **Depth:** Standard | **Domain:** Academic
+
+## Executive Summary
+
+Recent transformer research has shifted focus from scaling model size to
+improving efficiency and reasoning capability. Key developments include
+Mixture-of-Experts architectures reducing compute by 4-8x, linear attention
+mechanisms achieving O(n) complexity, and retrieval-augmented generation
+becoming standard practice for knowledge-intensive tasks.
+
+## 1. Efficiency Breakthroughs
+
+Linear attention variants such as RWKV-7 and Mamba-3 have demonstrated
+competitive performance with standard transformers while reducing memory
+usage by 60-80% on long sequences.^1,2 FlashAttention-4 further optimized
+GPU memory access patterns, achieving 2.3x speedup on H100 hardware.^3
+
+## 2. Architecture Innovations
+
+The Mixture-of-Experts (MoE) paradigm, popularized by Mixtral and adopted
+by GPT-5 and Gemini Ultra, activates only 12-25% of parameters per token
+while maintaining full model capability.^4,5
+
+## Key Findings
+
+- Linear attention is production-ready for sequences up to 128K tokens
+- MoE reduces training compute by 4-8x with minimal quality loss
+- RAG integration is now a first-class architectural component
+
+## Contradictions & Open Questions
+
+- Whether linear attention can fully replace softmax attention at scale
+  remains contested — DeepMind claims yes,^6 Meta's research suggests
+  quality gaps persist above 70B parameters^7
+
+---
+### Sources
+^1 Peng et al., "RWKV-7: Reinventing RNNs" — arxiv.org/abs/2501.xxxxx — [academic]
+^2 Gu & Dao, "Mamba-3: Linear-Time Sequence Modeling" — arxiv.org/abs/2502.xxxxx — [academic]
+^3 Dao, "FlashAttention-4" — arxiv.org/abs/2503.xxxxx — [academic]
+^4 Mistral AI, "Mixtral Technical Report" — mistral.ai/research — [industry]
+^5 Google DeepMind, "Scaling MoE" — deepmind.google/research — [academic]
+^6 DeepMind Internal, "Linear Attention at Scale" — [academic]
+^7 Meta FAIR, "Attention Mechanism Comparison" — ai.meta.com/research — [academic]
+```
+
+### Then you choose:
+```
+Research complete! What next?
+
+  [S] Save as .md file
+  [P] Generate podcast from findings
+  [V] Generate video explainer
+  [D] Generate slide deck
+  [Q] Generate quiz/flashcards
+  [F] Ask follow-up questions
+  [+] Go deeper on a specific section
+  [C] Compare with another topic
+  [X] Done
+```
+
+---
 
 ## How It Works
 
