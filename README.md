@@ -1,8 +1,17 @@
+<div align="center">
+
 # Deep Research Skill
 
 **Free Perplexity/Gemini-level deep research for Claude Code, Cursor, Copilot, and any agent-skills compatible tool.**
 
-Research any topic with 20-40+ sources, get structured reports with footnotes, then generate podcasts, videos, slides, and quizzes from your findings — all from one command.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Standard: agent-skills](https://img.shields.io/badge/Standard-agent--skills-99C9BF.svg)](https://agentskills.io)
+[![Python: 3.10+](https://img.shields.io/badge/Python-3.10+-FCE7D6.svg)](https://www.python.org/)
+[![Works with: Claude Code](https://img.shields.io/badge/Works_with-Claude_Code-blueviolet.svg)](https://claude.ai/code)
+
+Research any topic with 20-40+ sources, get structured reports with footnotes, then generate podcasts, videos, slides, and quizzes from your findings -- all from one command.
+
+</div>
 
 ---
 
@@ -35,7 +44,7 @@ Deep research tools like Perplexity Pro, Gemini Deep Research, and ChatGPT Deep 
 # Copy to your skills directory
 mkdir -p ~/.claude/skills/deep-research
 curl -o ~/.claude/skills/deep-research/SKILL.md \
-  https://raw.githubusercontent.com/athanasopoulosc/deep-research-skill/main/SKILL.md
+  https://raw.githubusercontent.com/Chris1220-cmd/deep-research-skill/raw/master/SKILL.md
 ```
 
 ### Other Agents (Cursor, Copilot, Codex)
@@ -187,14 +196,42 @@ This is a single-file skill (`SKILL.md`) with no external dependencies. It uses:
 
 The skill follows the [agent-skills](https://agentskills.io) open standard and works with Claude Code, Cursor, GitHub Copilot, Gemini CLI, OpenAI Codex, and any compatible agent.
 
+## Supported Agents
+
+This skill follows the open [agent-skills](https://agentskills.io) standard and works with:
+
+- [Claude Code](https://claude.ai/code) (Anthropic)
+- [Cursor](https://cursor.com)
+- [GitHub Copilot](https://github.com/features/copilot)
+- [Gemini CLI](https://github.com/google-gemini/gemini-cli)
+- [OpenAI Codex](https://github.com/openai/codex)
+- [OpenClaw](https://github.com/openclaw/openclaw)
+- Any tool that reads `SKILL.md` files
+
+## FAQ
+
+**Q: Is this actually free?**
+A: Yes. The skill itself is free and open source. NotebookLM is a free Google service. You only pay for the AI agent tokens you already use (Claude Code, Cursor, etc.).
+
+**Q: Do I need NotebookLM?**
+A: No. Without NotebookLM, the skill works in fallback mode using WebSearch + WebFetch. You get research reports but not podcast/video/slides/quiz generation.
+
+**Q: How does the research quality compare to Perplexity?**
+A: The deep research mode uses Google's Gemini infrastructure (via NotebookLM), which analyzes 20+ web sources per query. Domain boost adds targeted searches to authoritative sources that general tools miss. The quality is comparable, with the advantage of domain-specific source prioritization.
+
+**Q: Can I add my own domain?**
+A: Yes. Fork the repo, add a new domain section under "Domain Boost" in SKILL.md with your search queries and source priority rules, then submit a PR.
+
 ## Contributing
 
-Contributions welcome! Areas to improve:
+Contributions welcome! Some ideas:
 
-- **New domains**: Add domain boost configs for medical, engineering, finance, etc.
-- **Report templates**: Alternative report formats beyond Gemini-style
-- **Language support**: Localized pre-flight prompts and report headers
-- **Testing**: Document edge cases and error scenarios
+- **New domains**: medical, engineering, finance, cybersecurity, etc.
+- **Report templates**: alternative formats (academic paper style, executive brief, etc.)
+- **Language support**: localized pre-flight prompts and report headers
+- **Integrations**: additional research backends beyond NotebookLM
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
@@ -202,4 +239,10 @@ MIT -- see [LICENSE](LICENSE)
 
 ---
 
-Built by [Christos Athanasopoulos](https://github.com/athanasopoulosc)
+<div align="center">
+
+Built by [Christos Athanasopoulos](https://github.com/Chris1220-cmd)
+
+If this skill saved you time or money, consider giving it a star.
+
+</div>
